@@ -1,0 +1,29 @@
+<a href="#" class="bf-product-box bf-product-box--link">
+  <div class="bf-product-box__header">
+    <img *ngIf="this.brandLogo" src={{this.brandLogo}} alt="" class="bf-product-box__left-logo">
+    <p *ngIf="product.discount" class="bf-product-box__right-discount">
+      {{product.discount}}% OFF
+    </p>
+  </div>
+  <div class="bf-product-box__image">
+    <img src={{product.imageUrl}} alt="">
+  </div>
+  <div class="bf-product-box__inf-part">
+    <p class="bf-product-box__name">
+      {{product.title}}
+    </p>
+    <p class="bf-product-box__condition">
+      {{product.condition}}
+      <span *ngIf="product.freeShipping">+ FREE SHIPPING</span>
+    </p>
+    <img *ngIf="this.brandLogo" src={{this.brandLogo}} src="assets/amazon-logo-plain.png" alt="" class="bf-product-box__left-logo">
+  </div>
+  <p class="bf-product-box__price">
+    ${{product.price}}
+    <span *ngIf="product.oldPrice" class="bf-product-box__price--prev-price">
+              ${{product.oldPrice}}
+            </span>
+  </p>
+  <button class="bf-deal-btn">view deal</button>
+</a>
+

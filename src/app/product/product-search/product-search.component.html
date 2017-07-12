@@ -1,0 +1,21 @@
+<div class="bf-search-field">
+  <input #productSearch
+         [(ngModel)]="term"
+         (ngModelChange)="inputChange()"
+         (blur)="closeAutocomplete($event)"
+         (focus)="activeAutocomplete()"
+         autocomplete="off" type="search" id="search"
+         placeholder="Search black friday deals"
+  />
+  <button (click)="autocomplete = !autocomplete" class="bf-search-field__search-btn"></button>
+</div>
+<div  class="bf-search-hints">
+   <!--use for not duplicate full term in autocomplete-->
+    <ng-container *ngFor="let product of products " >
+      <div class="bf-search-hint"
+           *ngIf="autocomplete"
+           (mousedown)="update(product.title, $event)">
+        {{product.title}}
+      </div>
+    </ng-container>
+</div>

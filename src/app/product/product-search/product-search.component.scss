@@ -1,0 +1,71 @@
+@import "variables";
+@import "mixins";
+:host {
+  display: flex;
+  margin: 0 15px;
+  flex: 0 2 555px;
+  position: relative;
+}
+.bf-search-field {
+  flex-direction: row;
+  display: flex;
+  flex: 0 0 100%;
+
+  input {
+    flex-grow: 1;
+    height: $search-field-height;
+    background-color: white;
+    border: solid 1px #cedfe1;
+    padding: 0 13px;
+    border-right: none;
+    outline: none;
+    //todo: move this to mixins
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+    //
+    &::placeholder, & {
+      font-family: $primary-font-family;
+      font-size: 14px;
+      font-weight: 500;
+      color: #8b9db0;
+    }
+
+  }
+  &__search-btn {
+    @include basic-button-style;
+    width: 30px;
+    height: $search-field-height;
+    background-color: #ffb200;
+    background-image: url(/assets/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 18px;
+  }
+}
+.bf-search-hints {
+  border-top: none;
+  width: 100%;
+  position: absolute;
+  top: $search-field-height;
+  background-color: white;
+  & :last-child {
+    border-bottom: solid 1px #cedfe1;
+  }
+}
+.bf-search-hint {
+  display: flex;
+  align-items: center;
+  border-left: solid 1px #cedfe1;
+  border-right: solid 1px #cedfe1;
+  text-transform: capitalize;
+  font-family: $primary-font-family;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8b9db0;
+  height: 30px;
+  padding: 0 15px;
+  &:hover {
+    background-color: $background-color;
+  }
+}

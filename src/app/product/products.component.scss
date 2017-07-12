@@ -1,0 +1,28 @@
+@import "mixins";
+@import "variables";
+
+.bf-product-wrap {
+   padding:  calc(#{$distance-btw-products-box--tob}/2) calc(#{$distance-btw-products-box--lor}/2);
+}
+.bf-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: calc(#{-$distance-btw-products-box--tob}/2)
+  calc(#{-$distance-btw-products-box--lor}/2);
+  .bf-product-wrap {
+    flex: 0 0 20%;
+    display: flex;
+    @include respond-to('less-container'){
+      flex: 0 0 25%;
+    } ;
+    @include respond-to('tablet'){
+      flex: 0 0 33.333%;
+    };
+
+    @include respond-to('mobile'){
+      flex: 0 0 50%;
+    };
+
+  }
+}

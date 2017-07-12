@@ -1,0 +1,28 @@
+/*-------------------------COLORS------------------------------------*/
+$title-color: #50657c;
+$background-color: #f3f5f6;
+
+/*---------------------------SIZES-----------------------------------*/
+
+$search-field-height: 30px;
+
+/*-----------------------DISTANCES-----------------------------------*/
+
+$distance-btw-products-box--lor: 15px;
+$distance-btw-products-box--tob: 15px;
+
+
+/*-------------------------FONTS-------------------------------------*/
+
+$primary-font-family: Lato;
+
+/*------------------------SCREENS------------------------------------*/
+
+$break-small: 530px;
+$break-large: 768px;
+$container-width: 1185px;
+
+@media (min-width: $break-small)  {
+  $distance-btw-products-box--lor: 10px;
+  $distance-btw-products-box--tob: 10px;
+}

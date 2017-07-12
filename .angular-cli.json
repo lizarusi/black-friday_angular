@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "bf1"
+    "name": "bf1",
+    "ejected": false
   },
   "apps": [
     {
@@ -18,8 +19,14 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "app/shared/scss/"
+        ]
+      },
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "app/shared/scss/_deal-btn.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -52,6 +59,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+    }
   }
 }
