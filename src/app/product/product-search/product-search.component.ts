@@ -19,7 +19,6 @@ import 'rxjs/add/operator/switchMap';
   selector: 'product-search',
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.scss'],
-  providers: [ProductService]
 })
 
 export class ProductSearchComponent implements OnInit {
