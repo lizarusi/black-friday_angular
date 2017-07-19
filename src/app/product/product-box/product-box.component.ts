@@ -4,7 +4,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Http } from '@angular/http';
 
-import { Product} from '../shared/product.model';
+import { Product} from '../../core/product.model';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';

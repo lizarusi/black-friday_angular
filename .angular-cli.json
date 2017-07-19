@@ -21,12 +21,11 @@
       "prefix": "app",
       "stylePreprocessorOptions": {
         "includePaths": [
-          "app/shared/scss/"
+          "assets/scss/"
         ]
       },
       "styles": [
-        "styles.scss",
-        "app/shared/scss/_deal-btn.scss"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

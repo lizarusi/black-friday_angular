@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./app/shared/scss/_variables.scss";
-@import "./app/shared/scss/_mixins.scss";
+@import "assets/scss/_variables.scss";
+@import "assets/scss/_mixins.scss";
 body {
   padding: 0;
   margin: 0;
@@ -27,26 +27,3 @@ h1,h2,h3,h4,p,span {
     padding: 0 13px;
   };
 }
-//.bf-deal-btn {
-//
-//  @include basic-button-style;
-//  width: 110px;
-//  height: 35px;
-//  text-transform: uppercase;
-//  border-radius: 6px;
-//  background-color: #ffaa00;
-//  box-shadow: 0 2px 1px 0 rgba(255, 170, 0, 0.22);
-//  border: solid 1px #ffffff;
-//  font-family: $primary-font-family;
-//  font-size: 14px;
-//  color: white;
-//  &::after {
-//    // margin-left: 3px;
-//    content: url(/assets/button-icon.svg);
-//    display: inline-block;
-//    vertical-align: middle;
-//  }
-//  &:hover {
-//    opacity: 0.8;
-//  }
-//}

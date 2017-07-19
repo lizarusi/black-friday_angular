@@ -1,25 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
-import {InMemoryWebApiModule} from "angular-in-memory-web-api";
-import {InMemoryDataService} from "./shared/in-memory-data.service";
-
+import { AppRoutingModule } from './app-routing.module';
+import { LayoutModule } from './layout/layout.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    FooterComponent,
-    HeaderComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
+    CoreModule,
+    HomeModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,8 +2,8 @@
  * Created by lizarusi on 02.07.17.
  */
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import { ProductService } from '../shared/product.service'
-import {Product} from '../shared/product.model';
+import { ProductService } from '../../../core/product.service'
+import {Product} from '../../../core/product.model';
 
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
@@ -11,8 +11,8 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/distinct';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -42,12 +42,12 @@ export class ProductSearchComponent implements OnInit {
       .distinctUntilChanged()
       .switchMap( term => this.productService.searchProducts(term))
       .catch((err) => {
-        console.log(err);
-        return Observable.of<Product[]>([]);
-      })
+          console.log(err);
+          return Observable.of<Product[]>([]);
+        }
+      )
       .subscribe( results =>
                   this.products = results.filter(r => r.title !== this.term))
-
   }
   closeAutocomplete(event: any): void {
     this.autocomplete = false;
