@@ -7,9 +7,10 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsStoreComponent } from './products-store.component';
 import { StoreRoutingModule } from './products-store.routing';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
-  declarations: [ ProductsStoreComponent ],
+  declarations: [ ProductsStoreComponent, KeysPipe ],
   imports: [ StoreRoutingModule, CommonModule, FormsModule ],
 })
 

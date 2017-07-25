@@ -54,6 +54,7 @@
         Price ranges:
       </p>
       <div class="filters-block__current">
+        {{ appliedFilters.priceRanges | keys }}
       </div>
       <div class="filters-block__options" >
         <div class="filters-block__option"
@@ -62,6 +63,25 @@
                  [ngModel]="appliedFilters.priceRanges[option]"
                  [name]="option"
                  (ngModelChange)="updateFilters($event, 'priceRanges', option)"
+                 class="filters-block__filter">
+          <label>{{ option }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="filters-block">
+      <p class="filters-block__name">
+        Brands:
+      </p>
+      <div class="filters-block__current">
+        {{ appliedFilters.brands | keys }}
+      </div>
+      <div class="filters-block__options" >
+        <div class="filters-block__option"
+             *ngFor="let option of filters.brands">
+          <input type="checkbox"
+                 [ngModel]="appliedFilters.brands[option]"
+                 [name]="option"
+                 (ngModelChange)="updateFilters($event, 'brands', option)"
                  class="filters-block__filter">
           <label>{{ option }}</label>
         </div>

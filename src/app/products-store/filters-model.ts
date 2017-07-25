@@ -26,8 +26,8 @@ export class Filters {
     )
   }
   constructor(public sortBy: string | Array<object> = '',
-              public priceRanges: Array<string> | object = {},
-              public brands: Array<string> | object  = {}) {}
+              public priceRanges: object = {'All': true},
+              public brands: object  = {'All': true}) {}
 }
   //=^_^==^_^==^_^==^_^==^_^==^_^==^_^==^_^==^_^==^_^==^_^==^_^=
   // addFilter(filterName, option) {
