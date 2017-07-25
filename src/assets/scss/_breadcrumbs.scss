@@ -1,0 +1,19 @@
+@import "variables";
+.bf {
+  &-breadcrumbs {
+    font-family: $primary-font-family;
+    font-size: 14px;
+    color: #588e9a;
+    &__link:not(:first-child) {
+      &::before {
+        content: '/';
+        margin: 0 4px 0 1px;
+      }
+    }
+    &__link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

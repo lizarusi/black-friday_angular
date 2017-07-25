@@ -1,8 +1,9 @@
-<link rel="stylesheet" href="products-store.component.scss">
 <div class="bf-container">
-  <p class="bf-breadcrumbs">
-
-  </p>
+  <div class="bf-breadcrumbs">
+    <a href="/" class="bf-breadcrumbs__link">Home</a>
+    <a href="/" class="bf-breadcrumbs__link">Computers</a>
+    <a href="/" class="bf-breadcrumbs__link">Computers</a>
+  </div>
   <div class="bf-store__title">
     Automotive Deals <span class="bf-store__deals-count">75 Deals found</span>
   </div>
@@ -27,17 +28,49 @@
       Automative accessories
     </a>
   </nav>
-  <div class="filters">
-    <div class="filter-block">
-      <p class="filter-block__name">
-        Sort by
+  <form class="filters">
+    <div class="filters-block">
+      <p class="filters-block__name">
+        Sort By:
       </p>
-      <div class="filter-block__current">
-        Best match
+      <div class="filters-block__current">
+        {{appliedFilters.sortBy}}
       </div>
-      <div class="filter-block__filters">
-        <div class="filter-block__filter"></div>
+      <div class="filters-block__options" >
+        <div class="filters-block__option"
+             *ngFor="let option of filters.sortBy;
+             let i = index">
+          <input type="radio"
+                 [value]="option.name"
+                 [(ngModel)]="appliedFilters.sortBy"
+                 [name]="option.value"
+                 class="filters-block__filter">
+          <label>{{ option.name }}</label>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="filters-block">
+      <p class="filters-block__name">
+        Price ranges:
+      </p>
+      <div class="filters-block__current">
+      </div>
+      <div class="filters-block__options" >
+        <div class="filters-block__option"
+             *ngFor="let option of filters.priceRanges">
+          <input type="checkbox"
+                 [ngModel]="appliedFilters.priceRanges[option]"
+                 [name]="option"
+                 (ngModelChange)="updateFilters($event, 'priceRanges', option)"
+                 class="filters-block__filter">
+          <label>{{ option }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="filters-block">
+      <button (click)="resetFilters()" class="filters-block__name filters-block__name--button">
+        Clear Filters
+      </button>
+    </div>
+  </form>
 </div>
